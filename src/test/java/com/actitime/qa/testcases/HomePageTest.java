@@ -20,7 +20,7 @@ public class HomePageTest extends TestBase{
 	
 	
 	@BeforeMethod
-	public void seup() {
+	public void setup() {
 		initialization();
 		loginPage = new LoginPage();
 		homePage = loginPage.loging(properties.getProperty("username"), properties.getProperty("password"));

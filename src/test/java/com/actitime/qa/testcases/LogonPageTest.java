@@ -29,21 +29,18 @@ public class LogonPageTest extends TestBase{
 	public void seup() {
 		initialization();
 		loginPage = new LoginPage();
-		
 	}
 	
 	
 	@Test(priority = 1)
 	public void loginPageLogoTest() {
-		
-	boolean flag= loginPage.validateActiTimeLogo();
-	Assert.assertTrue(flag);
+		boolean flag= loginPage.validateActiTimeLogo();
+		Assert.assertTrue(flag);
 		
 	}
 	
 	
 	@DataProvider
-	
 	public Object[][] getactiTimeTestData() {
 		Object data[][]=testUtil.getTestData(sheetName);
 		
@@ -54,8 +51,6 @@ public class LogonPageTest extends TestBase{
 	}
 	@Test(priority = 2,dataProvider="getactiTimeTestData")
 	public void LoginTest(String userName, String password) {
-		
-		
 		homePage = loginPage.loging(userName, password);
 	}
 	

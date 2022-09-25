@@ -11,6 +11,7 @@ import org.openqa.selenium.support.PageFactoryFinder;
 import com.actitime.qa.base.TestBase;
 
 import net.bytebuddy.asm.Advice.Return;
+import org.testng.Assert;
 
 public class LoginPage extends TestBase {
 	
@@ -38,6 +39,9 @@ public class LoginPage extends TestBase {
 	
 	@FindBy(xpath = "//div[@class='atLogoImg']")
 	WebElement actiTimeLogo;
+
+	@FindBy(xpath = "/html/body/div[6]")
+	WebElement navBar;
 	
 	
 	//initialization
@@ -62,6 +66,11 @@ public class LoginPage extends TestBase {
 		userName.sendKeys(uName);
 		passWord.sendKeys(pword);
 		loginButton.click();
+		if(navBar.isDisplayed()) {
+			Assert.assertTrue(true);
+		}else {
+			Assert.assertFalse(false);
+		}
 		return new HomePage();
 		
 	}
